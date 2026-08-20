@@ -24,8 +24,26 @@
 prepend-rules:
   - DOMAIN-SUFFIX,lencr.org,DIRECT
   - DOMAIN-SUFFIX,letsencrypt.org,DIRECT
-  # ============================================================
-  # 一、国内常用网站/域名（强制 DIRECT）
+  - DOMAIN,xpaywalletcdn-prod.azureedge.net,REJECT
+  - DOMAIN-SUFFIX,scorecardresearch.com,REJECT
+  - DOMAIN-SUFFIX,adtidy.org,DIRECT
+
+# IP地理位置查询接口，隐私敏感统一拒绝
+
+  - DOMAIN-SUFFIX,ipapi.co,REJECT
+  - DOMAIN-SUFFIX,ip-api.com,REJECT
+  - DOMAIN-SUFFIX,ip.sb,REJECT
+  - DOMAIN-SUFFIX,geojs.io,REJECT
+  - DOMAIN-SUFFIX,ipwho.is,REJECT
+  - DOMAIN-SUFFIX,ipinfo.io,REJECT
+  - DOMAIN-SUFFIX,ip2location.com,REJECT
+  - DOMAIN-SUFFIX,ipstack.com,REJECT
+  - DOMAIN-SUFFIX,ipdata.co,REJECT
+  - DOMAIN-SUFFIX,ip.taobao.com,REJECT
+  - DOMAIN-SUFFIX,myip.ipip.net,REJECT
+
+# ============================================================
+# 一、国内常用网站/域名（强制 DIRECT）
   # ============================================================
   # ---------- 通用静态资源 / CDN ----------
   - DOMAIN-SUFFIX,alicdn.com,DIRECT
@@ -63,7 +81,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,qhres.com,DIRECT
   - DOMAIN-SUFFIX,csdnimg.cn,DIRECT
 
-  # ---------- 搜索 / 门户 ----------
+# ---------- 搜索 / 门户 ----------
   - DOMAIN-SUFFIX,baidu.com,DIRECT
   - DOMAIN-SUFFIX,baidupcs.com,DIRECT
   - DOMAIN-SUFFIX,baidubce.com,DIRECT
@@ -76,7 +94,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,sohu.com,DIRECT
   - DOMAIN-SUFFIX,cn.bing.com,DIRECT
 
-  # ---------- 即时通讯 / 社交 ----------
+# ---------- 即时通讯 / 社交 ----------
   - DOMAIN-SUFFIX,qq.com,DIRECT
   - DOMAIN-SUFFIX,tencent.com,DIRECT
   - DOMAIN-SUFFIX,weixin.com,DIRECT
@@ -101,7 +119,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,maimai.cn,DIRECT
   - DOMAIN-SUFFIX,soulapp.cn,DIRECT
 
-  # ---------- 电商 / 购物 / 生活服务 ----------
+# ---------- 电商 / 购物 / 生活服务 ----------
   - DOMAIN-SUFFIX,taobao.com,DIRECT
   - DOMAIN-SUFFIX,tmall.com,DIRECT
   - DOMAIN-SUFFIX,alibaba.com,DIRECT
@@ -142,7 +160,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,51job.com,DIRECT
   - DOMAIN-SUFFIX,zhipin.com,DIRECT
 
-  # ---------- 视频 / 直播 / 音乐 / 影音 ----------
+# ---------- 视频 / 直播 / 音乐 / 影音 ----------
   - DOMAIN-SUFFIX,youku.com,DIRECT
   - DOMAIN-SUFFIX,tudou.com,DIRECT
   - DOMAIN-SUFFIX,iqiyi.com,DIRECT
@@ -167,7 +185,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,xiaoyuzhoufm.com,DIRECT
   - DOMAIN-SUFFIX,lizhi.fm,DIRECT
 
-  # ---------- 新闻 / 资讯 ----------
+# ---------- 新闻 / 资讯 ----------
   - DOMAIN-SUFFIX,163.com,DIRECT
   - DOMAIN-SUFFIX,126.com,DIRECT
   - DOMAIN-SUFFIX,netease.com,DIRECT
@@ -197,7 +215,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,jianshu.com,DIRECT
   - DOMAIN-SUFFIX,sspai.com,DIRECT
 
-  # ---------- 银行 / 支付 ----------
+# ---------- 银行 / 支付 ----------
   - DOMAIN-SUFFIX,icbc.com.cn,DIRECT
   - DOMAIN-SUFFIX,ccb.com,DIRECT
   - DOMAIN-SUFFIX,boc.cn,DIRECT
@@ -211,7 +229,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,tenpay.com,DIRECT
   - DOMAIN-SUFFIX,wechatpay.com,DIRECT
 
-  # ---------- 出行 / 物流 / 交通 ----------
+# ---------- 出行 / 物流 / 交通 ----------
   - DOMAIN-SUFFIX,12306.cn,DIRECT
   - DOMAIN-SUFFIX,ctrip.com,DIRECT
   - DOMAIN-SUFFIX,c-ctrip.com,DIRECT
@@ -237,13 +255,13 @@ prepend-rules:
   - DOMAIN-SUFFIX,dongchedi.com,DIRECT
   - DOMAIN-SUFFIX,huolala.cn,DIRECT
 
-  # ---------- 新能源车 ----------
+# ---------- 新能源车 ----------
   - DOMAIN-SUFFIX,byd.com,DIRECT
   - DOMAIN-SUFFIX,nio.com,DIRECT
   - DOMAIN-SUFFIX,lixiang.com,DIRECT
   - DOMAIN-SUFFIX,xiaopeng.com,DIRECT
 
-  # ---------- 办公 / 云服务 / 开发社区 ----------
+# ---------- 办公 / 云服务 / 开发社区 ----------
   - DOMAIN-SUFFIX,wps.cn,DIRECT
   - DOMAIN-SUFFIX,kingsoft.com,DIRECT
   - DOMAIN-SUFFIX,shimo.im,DIRECT
@@ -273,7 +291,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,gitcode.com,DIRECT
   - DOMAIN-SUFFIX,npmmirror.com,DIRECT
 
-  # ---------- AI / 大模型（国产，2023-2026 热门）----------
+# ---------- AI / 大模型（国产，2023-2026 热门）----------
   - DOMAIN-SUFFIX,deepseek.com,DIRECT
   - DOMAIN-SUFFIX,doubao.com,DIRECT
   - DOMAIN-SUFFIX,kimi.com,DIRECT
@@ -295,11 +313,11 @@ prepend-rules:
   - DOMAIN-SUFFIX,01.ai,DIRECT
   - DOMAIN-SUFFIX,marscode.com,DIRECT
 
-  # ---------- 短剧（近年爆发的新品类）----------
+# ---------- 短剧（近年爆发的新品类）----------
   - DOMAIN-SUFFIX,hongguoduanju.com,DIRECT
   - DOMAIN-SUFFIX,shortdramas.com,DIRECT
 
-  # ---------- 教育 / 阅读 / 其他常用 ----------
+# ---------- 教育 / 阅读 / 其他常用 ----------
   - DOMAIN-SUFFIX,edu.cn,DIRECT
   - DOMAIN-SUFFIX,chsi.com.cn,DIRECT
   - DOMAIN-SUFFIX,cnki.net,DIRECT
@@ -328,7 +346,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,todesk.com,DIRECT
   - DOMAIN-SUFFIX,oray.com,DIRECT
 
-  # ---------- 运营商 / 智能硬件 ----------
+# ---------- 运营商 / 智能硬件 ----------
   - DOMAIN-SUFFIX,chinamobile.com,DIRECT
   - DOMAIN-SUFFIX,10086.cn,DIRECT
   - DOMAIN-SUFFIX,139.com,DIRECT
@@ -351,17 +369,20 @@ prepend-rules:
   - DOMAIN-SUFFIX,honor.com,DIRECT
 
   # ============================================================
-  # 二、无需代理即可直连的国际服务
+# 二、无需代理即可直连的国际服务
   # （能不走代理就不走代理；被墙的 Google/OpenAI/X/YouTube/
   #   Telegram 等不在此列，仍按订阅规则走代理）
   # ============================================================
-  # ---------- AI 服务（Claude Code / Anthropic）----------
+# ---------- AI 服务（Claude Code / Anthropic）----------
+
+
+# ---------- AI 服务（Claude Code / Anthropic）----------
   # Claude Code 运行时只依赖下面的域名，不用代理就能正常使用
   - DOMAIN-SUFFIX,anthropic.com,DIRECT
   - DOMAIN-SUFFIX,claude.ai,DIRECT
   - DOMAIN-SUFFIX,sentry.io,DIRECT
 
-  # ---------- Microsoft（系统更新 / Office / Bing）----------
+# ---------- Microsoft（系统更新 / Office / Bing）----------
   - DOMAIN-SUFFIX,microsoft.com,DIRECT
   - DOMAIN-SUFFIX,office.com,DIRECT
   - DOMAIN-SUFFIX,office365.com,DIRECT
@@ -375,28 +396,32 @@ prepend-rules:
   - DOMAIN-SUFFIX,code.visualstudio.com,DIRECT
   - DOMAIN-SUFFIX,marketplace.visualstudio.com,DIRECT
 
-  # ---------- Apple（iCloud / App Store）----------
+
+# ---------- Apple（iCloud / App Store）----------
   - DOMAIN-SUFFIX,apple.com,DIRECT
   - DOMAIN-SUFFIX,icloud.com,DIRECT
   - DOMAIN-SUFFIX,icloud.com.cn,DIRECT
   - DOMAIN-SUFFIX,mzstatic.com,DIRECT
   - DOMAIN-SUFFIX,me.com,DIRECT
 
-  # ---------- GitHub / GitLab ----------
+# ---------- GitHub / GitLab ----------
   # 大陆直连 GitHub 速度一般，若克隆/下载慢，可删除这几行改走代理
+  - DOMAIN-SUFFIX,githubcopilot.com,DIRECT
   - DOMAIN-SUFFIX,github.com,DIRECT
   - DOMAIN-SUFFIX,githubusercontent.com,DIRECT
   - DOMAIN-SUFFIX,githubassets.com,DIRECT
   - DOMAIN-SUFFIX,github.io,DIRECT
   - DOMAIN-SUFFIX,gitlab.com,DIRECT
+  - DOMAIN-SUFFIX,vscode-cdn.net,DIRECT
+  - DOMAIN-SUFFIX,exp-tas.com,REJECT
 
-  # ---------- 国际大厂官网 / CDN ----------
+# ---------- 国际大厂官网 / CDN ----------
   - DOMAIN-SUFFIX,cloudflare.com,DIRECT
   - DOMAIN-SUFFIX,oracle.com,DIRECT
   - DOMAIN-SUFFIX,adobe.com,DIRECT
   - DOMAIN-SUFFIX,jetbrains.com,DIRECT
 
-  # ---------- 开发语言 / 包管理 / 文档 ----------
+# ---------- 开发语言 / 包管理 / 文档 ----------
   - DOMAIN-SUFFIX,python.org,DIRECT
   - DOMAIN-SUFFIX,pypi.org,DIRECT
   - DOMAIN-SUFFIX,files.pythonhosted.org,DIRECT
@@ -422,7 +447,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,redis.io,DIRECT
   - DOMAIN-SUFFIX,notion.so,DIRECT
 
-  # ---------- 学习 / 工具（国内可直连）----------
+# ---------- 学习 / 工具（国内可直连）----------
   - DOMAIN-SUFFIX,kaggle.com,DIRECT
   - DOMAIN-SUFFIX,codeforces.com,DIRECT
   - DOMAIN-SUFFIX,geogebra.org,DIRECT
@@ -445,7 +470,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,obsidian.md,DIRECT
   - DOMAIN-SUFFIX,deepl.com,DIRECT
 
-  # ---------- 硬件驱动 / 游戏平台（可直连）----------
+# ---------- 硬件驱动 / 游戏平台（可直连）----------
   - DOMAIN-SUFFIX,nvidia.com,DIRECT
   - DOMAIN-SUFFIX,amd.com,DIRECT
   - DOMAIN-SUFFIX,intel.com,DIRECT
@@ -455,7 +480,7 @@ prepend-rules:
   - DOMAIN-SUFFIX,zoom.us,DIRECT
 
   # ============================================================
-  # 三、兜底：.cn 域名 / geosite 国内站点 / 国内 IP 全部直连
+# 三、兜底：.cn 域名 / geosite 国内站点 / 国内 IP 全部直连
   # ============================================================
   - DOMAIN-SUFFIX,cn,DIRECT
   - GEOSITE,cn,DIRECT
